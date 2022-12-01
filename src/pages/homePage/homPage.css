@@ -1,0 +1,40 @@
+.btn-create {
+ margin-right: 24px;
+ width: 139px;
+ height: 40px;
+ background-color: #0F5EDD;
+ border: 0;
+ border-radius: 4px;
+ padding: 9px, 16px, 9px, 16px;
+}
+
+.btn-text {
+ font-size: 14px;
+ font-weight: 500;
+ margin-left: 17px;
+}
+
+:hover.btn-create {
+ cursor: pointer;
+ background-color: #3173dd;
+}
+
+.text-car-list {
+ font-family: "Poppins";
+ font-size: 24px;
+ font-weight: 600px;
+ color: #2F465F;
+ margin-left: 42px;
+}
+
+.select-box {
+ font-family: "Poppins";
+ text-align: left;
+ margin-left: 21px;
+ font-size: 20px;
+ font-weight: 500;
+ height: 22px;
+ width: 130px;
+ border: 0;
+ color: #2F465F;
+}

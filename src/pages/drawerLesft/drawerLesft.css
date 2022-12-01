@@ -1,0 +1,30 @@
+.btn {
+
+ display: flex;
+ align-items: center;
+ background-color: #0F5EDD;
+ width: 208px;
+ height: 52px;
+ border-radius: 6px;
+ border: 0;
+ margin-left: 16px;
+ margin-top: 46px;
+
+}
+
+.btn-icon {
+ margin-left: 22px;
+}
+
+.btn-text {
+ color: #FFF;
+ font-family: Source Sans Pro;
+ font-weight: 400;
+ font-size: 18px;
+ margin-left: 16px;
+}
+
+:hover.btn {
+ cursor: pointer;
+ background-color: #3173dd;
+}

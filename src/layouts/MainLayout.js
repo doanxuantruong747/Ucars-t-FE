@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-import DrawerLeft from "../pages/DrawerLesft";
+import DrawerLeft from "../pages/drawerLesft/DrawerLesft";
 
 
 function MainLayout() {

@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import DetailPage from "../pages/DetailPage";
 import EditPage from "../pages/EditPage";
 
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/homePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 
