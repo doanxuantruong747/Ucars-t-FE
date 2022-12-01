@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Box, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { positions } from "@mui/system";
+
 
 function SearchInput({ handleSubmit }) {
     const [searchQuery, setSearchQuery] = useState("");
@@ -14,7 +14,16 @@ function SearchInput({ handleSubmit }) {
 
     return (
         <form onSubmit={onSubmit}>
-            <Box sx={{ display: "flex", position: "relative" }}>
+            <div
+                style={{
+                    display: "flex",
+                    position: "relative",
+                    backgroundColor: "#F1F1F1",
+                    borderRadius: "99999px",
+                    border: "0",
+                    height: "40px",
+                    width: "240px"
+                }}>
                 <IconButton
                     sx={{
                         color: "#5F5F5F", width: "18px", height: "18px",
@@ -27,20 +36,19 @@ function SearchInput({ handleSubmit }) {
 
                 <input
                     value={searchQuery}
-                    placeholder="                 Search car brand"
+                    placeholder=" Search car brand"
                     onChange={(event) => setSearchQuery(event.target.value)}
                     style={{
-
+                        marginLeft: "40px",
+                        width: "160px",
                         backgroundColor: "#F1F1F1",
-                        borderRadius: "99999px",
-                        border: "0",
-                        height: "40px",
-                        width: "240px"
+                        border: "0 solid #F1F1F1",
+
                     }}
 
 
                 />
-            </Box>
+            </div>
 
         </form>
     );

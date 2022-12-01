@@ -6,7 +6,20 @@ import ListCarBrand from "../../features/carBrand/ListCarBrand";
 import './homPage.css'
 
 function HomePage() {
+    const [filterName, setFilterName] = useState("");
+    const [page, setPage] = useState(1);
+    const [open, setOpen] = useState(false);
 
+
+
+    const handleSubmit = (searchQuery) => {
+        setFilterName(searchQuery);
+        setPage(1)
+    };
+
+    const handleClickOpen = () => {
+        setOpen(true)
+    };
     return (
         <Box sx={{ mt: "29px", display: "flex", flexDirection: "column", fontFamily: "Poppins" }}>
             {/* <CreateCarBrand setOpen={setOpen} open={open} /> */}
@@ -23,7 +36,7 @@ function HomePage() {
                     </select>
 
                     <Box sx={{ ml: "72px" }}>
-                        <SearchInput />
+                        <SearchInput handleSubmit={handleSubmit} />
                     </Box>
                 </Box>
 
@@ -38,7 +51,7 @@ function HomePage() {
             </Box>
 
             <Box sx={{ mt: "33px", ml: "24px" }}>
-                <ListCarBrand />
+                <ListCarBrand filterName={filterName} page={page} />
             </Box>
         </Box>
     );
