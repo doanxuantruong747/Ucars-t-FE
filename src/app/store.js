@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-//import carBrandReducer from "../features/carBrand/carBrandSlice";
+import carBrandReducer from "../features/carBrand/carBrandSlice";
 
 
 const rootReducer = {
-    // carBrand: carBrandReducer,
+    carBrand: carBrandReducer,
 };
 
 const store = configureStore({

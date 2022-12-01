@@ -2,6 +2,7 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import SearchInput from "../../components/searchInput/SearchInput";
+import ListCarBrand from "../../features/carBrand/ListCarBrand";
 import './homPage.css'
 
 function HomePage() {
@@ -36,8 +37,8 @@ function HomePage() {
 
             </Box>
 
-            <Box sx={{ mt: 7 }}>
-                <div>list card brand</div>
+            <Box sx={{ mt: "33px", ml: "24px" }}>
+                <ListCarBrand />
             </Box>
         </Box>
     );
