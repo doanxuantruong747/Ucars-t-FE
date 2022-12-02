@@ -1,0 +1,27 @@
+.btn-create {
+ border: "none";
+ background-color: "#0F5EDD";
+ width: 127px;
+ height: 40px;
+ border-radius: 4px;
+
+}
+
+:hover.btn-create {
+ cursor: "pointer";
+ background-color: #3173dd;
+}
+
+.btn-cancel {
+ width: 83px;
+ height: 40px;
+ border: 0.5 solid #B4B4B4;
+ border-radius: 4px;
+ background-color: #FFFF
+}
+
+:hover.btn-cancel {
+ border: "none";
+ cursor: "pointer";
+ background-color: #B4B4B4;
+}

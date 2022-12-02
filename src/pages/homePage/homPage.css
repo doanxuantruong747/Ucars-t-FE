@@ -1,11 +1,10 @@
 .btn-create {
- margin-right: 82px;
+ /* margin-right: 82px; */
  width: 139px;
  height: 40px;
  background-color: #0F5EDD;
  border: 0;
  border-radius: 4px;
- padding: 9px, 16px, 9px, 16px;
 }
 
 .btn-text {

@@ -43,7 +43,6 @@ function SearchInput({ handleSubmit }) {
                         width: "160px",
                         backgroundColor: "#F1F1F1",
                         border: "0 solid #F1F1F1",
-
                     }}
 
 

@@ -79,14 +79,14 @@ export default slice.reducer;
 
 // add new car brand
 export const createCarBrand =
-  ({ name, image, description, status, model }) =>
+  ({ name, image, description, status }) =>
     async (dispatch) => {
       dispatch(slice.actions.startLoading());
       try {
 
         const imageUrl = await cloudinaryUpload(image);
         const response = await apiService.post("/carBrand", {
-          name, description, status, model,
+          name, description, status,
           image: imageUrl,
         });
 

@@ -11,6 +11,7 @@ function ListCarBrand({ filterName, page }) {
     const { listCarBrands } = useSelector((state) => state.carBrand)
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    let _id = Math.floor(Math.random() * 1000);
 
     useEffect((name) => {
         name = filterName
@@ -24,7 +25,11 @@ function ListCarBrand({ filterName, page }) {
                     {
                         listCarBrands.map((brand) => (
 
-                            <TableRow key={brand._id}>
+                            <TableRow key={
+                                brand._id
+                                    ? brand._id
+                                    : _id
+                            }>
                                 <TableCell >
                                     <Radio sx={{
                                         ml: "10px",
@@ -77,7 +82,9 @@ function ListCarBrand({ filterName, page }) {
                                                 color: "#2F465F",
                                                 fontFamily: "Poppins"
                                             }}>
-                                            {brand.name || ""}
+                                            {brand.name
+                                                ? brand.name
+                                                : ""}
                                         </Typography>
 
                                         <Box sx={{ display: "flex" }}>
@@ -89,7 +96,9 @@ function ListCarBrand({ filterName, page }) {
                                                     fontWeight: 400,
                                                     fontFamily: "Poppins"
                                                 }}>
-                                                {brand.description || ""}
+                                                {brand.description
+                                                    ? brand.description
+                                                    : ""}
                                             </Typography>
 
                                             <div
@@ -109,7 +118,10 @@ function ListCarBrand({ filterName, page }) {
                                                     fontSize: 14,
                                                     fontFamily: "Poppins"
                                                 }}>
-                                                {brand.moldesId.name || ""}
+                                                {brand.moldesId
+                                                    ? brand.moldesId.name
+                                                    : "Update Model"
+                                                }
                                             </Typography>
                                         </Box>
                                     </Box>
@@ -128,7 +140,9 @@ function ListCarBrand({ filterName, page }) {
                                         >Last Update</Typography>
                                         <Typography
                                             sx={{ color: "#8C8C8C", fontWeight: 400, fontSize: 14, fontFamily: "Poppins" }}
-                                        >{fDate(brand.updatedAt) || ""}</Typography>
+                                        >{brand.updatedAt
+                                            ? fDate(brand.updatedAt)
+                                            : ""}</Typography>
 
                                     </Box>
                                 </TableCell>
