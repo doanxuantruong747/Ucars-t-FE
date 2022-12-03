@@ -1,10 +1,11 @@
 import React from 'react'
+import CarBrandDetail from '../features/carBrand/CarBrandDetail'
 
 
 function DetailPage() {
   return (
     <>
-      <div>DetailPage</div>
+      <CarBrandDetail />
     </>
 
 
