@@ -6,7 +6,8 @@ import { useNavigate, useParams } from "react-router-dom"
 import { getSingleCarBrand } from "./carBrandSlice";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Button, Divider, IconButton, Typography } from "@mui/material";
-
+import './styleCarBrand.css'
+import DialogDeleteCarBrand from "./DialogDeleteCarBrand";
 
 
 function CarBrandDetail() {
@@ -43,7 +44,7 @@ function CarBrandDetail() {
     return (
 
         <Box maxWidth="sm" sx={{ ml: "50px", fontFamily: "Poppins" }}>
-            {/* <DialogDeleteCarBrand open={open} setOpen={setOpen} id={id} /> */}
+            <DialogDeleteCarBrand open={open} setOpen={setOpen} id={id} />
             <Box sx={{ display: "flex", alignItems: 'center' }}>
                 <IconButton
                     onClick={() => navigate("/")}
@@ -147,12 +148,14 @@ function CarBrandDetail() {
                     <img alt="" src="https://res.cloudinary.com/drvcdh4cx/image/upload/v1670026223/foods-store/rnsmiquhfknzwvhdcbs3.png" />
                 </Button>
 
-                <Button onClick={handleClickOpen}
-                    sx={{ ml: '100px', width: '145px', height: '40px', borderRadius: '4px' }}
-                    variant="outlined"
+                <Button
+                    sx={{ ml: "100px", width: '145px', height: '40px', borderRadius: '4px' }}
+                    variant="contained"
+                    onClick={handleClickOpen}
                 >
-                    <img alt="" src="https://res.cloudinary.com/drvcdh4cx/image/upload/v1670028663/foods-store/wwbmvyh7iuxd25xymkga.png" />
+                    <img alt="" src="https://res.cloudinary.com/drvcdh4cx/image/upload/v1670080532/foods-store/hl0dvk8wexcglxr6oyip.png" />
                 </Button>
+
             </Box>
         </Box>
 

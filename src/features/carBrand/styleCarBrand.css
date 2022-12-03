@@ -25,3 +25,10 @@
  cursor: "pointer";
  background-color: #B4B4B4;
 }
+
+.btn-delete-brand {
+ /* margin-left: "100px";
+ width: "145px";
+ height: '40px';
+ border-radius: '4px' */
+}

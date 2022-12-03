@@ -1,9 +1,10 @@
 import React from 'react'
+import CarBrandEdit from '../features/carBrand/CarBrandEdit'
 
 function EditPage() {
   return (
     <>
-      <div>EditPage</div>
+      <CarBrandEdit />
     </>
 
 

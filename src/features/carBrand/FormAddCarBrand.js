@@ -23,13 +23,13 @@ const CreateCarBrandSchema = yup.object().shape({
 export default function FormAddCarBrand({ handleClose }) {
 
     const { isLoading } = useSelector((state) => state.carBrand);
-    const [currentStatus, setcurrentStatus] = useState("")
+    const [currentStatus, setcurrentStatus] = useState("Active")
 
     const defaultValues = {
         name: "",
         image: "",
         description: "",
-        status: "",
+        status: currentStatus,
     }
 
 
@@ -132,22 +132,6 @@ export default function FormAddCarBrand({ handleClose }) {
 
                                 <SelectStatus setcurrentStatus={setcurrentStatus} />
 
-
-
-                                {/* <FSelect name="status" size="small"
-                                >
-                                    {[
-                                        { value: "Active", label: "Active" },
-                                        { value: "Inactive", label: "Inactive" },
-
-                                    ].map((option) => (
-                                        <option key={option.value} value={option.value}>
-                                            {option.label}
-                                        </option>
-                                    ))}
-
-
-                                </FSelect> */}
                             </Box>
                         </Box>
 
@@ -161,7 +145,10 @@ export default function FormAddCarBrand({ handleClose }) {
                     }}>Brand Description</Typography>
 
                     <Stack sx={{ ml: "24px", width: "550px" }}>
-                        <FTextField name="description" placeholder="Input Content" />
+                        <FTextField name="description" placeholder="Input Content"
+                            multiline
+                            rows={3}
+                        />
                     </Stack>
 
                 </Grid>
@@ -188,35 +175,3 @@ export default function FormAddCarBrand({ handleClose }) {
 
     );
 }
-
-
-//<img alt='' src='icon/Status-active.png' />
-
-// <Box sx={{
-//     mt: "34px",
-//     display: "flex",
-//     justifyContent: "flex-end",
-//     fontFamily: "Poppins",
-// }}>
-//     <Box sx={{ mr: "12px" }}>
-//         <button className='btn-cancel'
-//             onClick={handleClose}
-//         >Cancel</button>
-//     </Box>
-
-
-//     <button className='btn-create'
-//         type="submit"
-
-//         onClick={onSubmit}
-//     //loading={isLoading || isSubmitting}
-//     >
-//         <img alt='' src='icon/Primary.png'
-//             style={{
-//                 width: "95px",
-//                 height: "14px"
-//             }}
-//         />
-
-//     </button>
-

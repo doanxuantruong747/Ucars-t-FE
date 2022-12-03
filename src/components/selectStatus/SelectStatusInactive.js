@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 
-export default function SelectStatus({ setcurrentStatus }) {
+export default function SelectStatusInactive({ setcurrentStatus }) {
  const [anchorEl, setAnchorEl] = useState(null);
  const [status, setStatus] = useState(true);
  const open = Boolean(anchorEl);
@@ -19,13 +19,13 @@ export default function SelectStatus({ setcurrentStatus }) {
 
  const handleClickActive = () => {
   setcurrentStatus("Active")
-  setStatus(true)
+  setStatus(false)
   handleClose()
  }
 
  const handleClickInactive = () => {
   setcurrentStatus("Inactive")
-  setStatus(false)
+  setStatus(true)
   handleClose()
  }
 
@@ -40,8 +40,8 @@ export default function SelectStatus({ setcurrentStatus }) {
     onClick={handleClick}
    >
     {status
-     ? <img alt='active' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/dnfykeepm46n946an9zv.png' />
-     : <img alt='inactive' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/cvsuxrhfl0xueievwiw8.png' />
+     ? <img alt='inactive' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/cvsuxrhfl0xueievwiw8.png' />
+     : <img alt='active' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/dnfykeepm46n946an9zv.png' />
     }
 
    </Button>

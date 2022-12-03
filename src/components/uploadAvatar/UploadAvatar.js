@@ -4,6 +4,8 @@ import { useDropzone } from "react-dropzone";
 import { Typography, Box } from "@mui/material";
 import { styled, alpha } from "@mui/material/styles";
 import RejectionFiles from "../rejectionFiles/RejectionFiles";
+import "./uploadAvatar.css";
+
 
 const RootStyle = styled("div")(({ theme }) => ({
   width: 144,
@@ -12,6 +14,9 @@ const RootStyle = styled("div")(({ theme }) => ({
   borderRadius: "50%",
   padding: theme.spacing(1),
   border: `1px dashed ${alpha("#919EAB", 0.32)}`,
+  "&:hover": {
+
+  },
 }));
 
 const DropZoneStyle = styled("div")({
@@ -24,9 +29,12 @@ const DropZoneStyle = styled("div")({
   position: "relative",
   alignItems: "center",
   justifyContent: "center",
+  zIndex: 0,
   "& > *": { width: "100%", height: "100%" },
   "&:hover": {
     cursor: "pointer",
+    backgroundColor: "#232323",
+    opacity: 0.8,
     "& .placeholder": {
     },
   },
@@ -49,18 +57,21 @@ function UploadAvatar({ error, file, helperText, sx, ...other }) {
     <>
       <RootStyle
         sx={{
-          backgroundColor: "#E3E3E3",
+          //backgroundColor: "#E3E3E3",
+          backgroundColor: "#FFF",
           borderColor: "sucess.light",
           width: "120px", height: "120px"
         }}
       >
-        <DropZoneStyle
+        <DropZoneStyle className="dropZoneStyle"
           {...getRootProps()}
           sx={{
             ...(isDragActive && { opacity: 0.72 }),
           }}
         >
+
           <input {...getInputProps()} />
+
 
           {file && (
             <Box
@@ -98,8 +109,11 @@ function UploadAvatar({ error, file, helperText, sx, ...other }) {
               </Box>
             )
           }
-
+          <div className="text-change-logo">
+            CHANGE <br />LOGO
+          </div>
         </DropZoneStyle>
+
       </RootStyle>
 
       {helperText && helperText}

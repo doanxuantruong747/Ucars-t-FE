@@ -1,0 +1,35 @@
+.dropZoneStyle {
+  /* width: "100%";
+ height: "100%";
+ outline: "none";
+ display: "flex";
+ overflow: "hidden";
+ border-radius: "50%";
+ position: "relative";
+ align-items: "center";
+ justify-content: "center"; */
+
+}
+
+
+:hover.dropZoneStyle .text-change-logo {
+  cursor: pointer;
+  display: inline
+    /* opacity: 0.3; */
+
+    /* background-image: url("https://res.cloudinary.com/drvcdh4cx/image/upload/v1670045623/foods-store/vtbtct1ht6srisugbww3.png"); */
+}
+
+.text-change-logo {
+  position: absolute;
+  z-index: 9;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  margin-top: 66px;
+  text-align: center;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  display: none
+}

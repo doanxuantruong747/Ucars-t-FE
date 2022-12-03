@@ -114,7 +114,7 @@ function ListCarBrand({ filterName, page }) {
                                                 sx={{
                                                     ml: "16px",
                                                     color: "#0F5EDD",
-                                                    fontWeight: 600,
+                                                    fontWeight: 500,
                                                     fontSize: 14,
                                                     fontFamily: "Poppins"
                                                 }}>
