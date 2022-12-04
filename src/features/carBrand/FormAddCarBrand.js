@@ -62,7 +62,6 @@ export default function FormAddCarBrand({ handleClose }) {
 
 
     const onSubmit = (data) => {
-
         const page = 1
         const { name, image, description } = data
         dispatch(createCarBrand({ name, image, description, status: currentStatus }))

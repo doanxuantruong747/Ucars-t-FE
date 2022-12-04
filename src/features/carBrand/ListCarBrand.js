@@ -26,7 +26,7 @@ function ListCarBrand({ filterName, page }) {
                         listCarBrands.map((brand) => (
 
                             <TableRow key={
-                                brand._id
+                                brand
                                     ? brand._id
                                     : _id
                             }>
@@ -39,7 +39,10 @@ function ListCarBrand({ filterName, page }) {
                                 </TableCell>
 
                                 <TableCell >
-                                    <img alt='logo' src={brand.image || ""}
+                                    <img alt='logo' src={
+                                        brand
+                                            ? brand.image
+                                            : "icon/UCARSLogo.png"}
                                         style={{
                                             marginLeft: "-30px",
                                             width: "64px", height: "64px",
@@ -49,7 +52,7 @@ function ListCarBrand({ filterName, page }) {
                                 </TableCell>
 
                                 <TableCell>
-                                    {brand.status === 'Active'
+                                    {(brand && brand.status === 'Active')
                                         ? (<div
                                             style={{
                                                 marginLeft: "-30px",
@@ -82,7 +85,7 @@ function ListCarBrand({ filterName, page }) {
                                                 color: "#2F465F",
                                                 fontFamily: "Poppins"
                                             }}>
-                                            {brand.name
+                                            {brand
                                                 ? brand.name
                                                 : ""}
                                         </Typography>
@@ -96,7 +99,7 @@ function ListCarBrand({ filterName, page }) {
                                                     fontWeight: 400,
                                                     fontFamily: "Poppins"
                                                 }}>
-                                                {brand.description
+                                                {brand
                                                     ? brand.description
                                                     : ""}
                                             </Typography>
@@ -118,7 +121,7 @@ function ListCarBrand({ filterName, page }) {
                                                     fontSize: 14,
                                                     fontFamily: "Poppins"
                                                 }}>
-                                                {brand.moldesId
+                                                {(brand && brand.moldesId)
                                                     ? brand.moldesId.name
                                                     : "Update Model"
                                                 }
@@ -140,7 +143,7 @@ function ListCarBrand({ filterName, page }) {
                                         >Last Update</Typography>
                                         <Typography
                                             sx={{ color: "#8C8C8C", fontWeight: 400, fontSize: 14, fontFamily: "Poppins" }}
-                                        >{brand.updatedAt
+                                        >{brand
                                             ? fDate(brand.updatedAt)
                                             : ""}</Typography>
 
@@ -149,7 +152,7 @@ function ListCarBrand({ filterName, page }) {
 
                                 <TableCell>
                                     {
-                                        brand.status === 'Active'
+                                        (brand && brand.status === 'Active')
 
                                             ? <div style={{
                                                 marginRight: "50px",
