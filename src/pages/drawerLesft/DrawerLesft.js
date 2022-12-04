@@ -60,7 +60,7 @@ export default function DrawerLeft() {
 
 
 
-                        <img alt="" src='icon/bell.png'
+                        <img alt="icon-bell" src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025543/foods-store/uhzn7g8lm50qfyhvgfgj.png'
                             style={{
                                 width: "15px",
                                 height: "20px",
@@ -68,7 +68,7 @@ export default function DrawerLeft() {
                             }}
                         />
 
-                        <img alt="" src='icon/Ellipse.png'
+                        <img alt="icon-ellipse" src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/tdnthnf52ptnfzccvpnn.png'
                             style={{
                                 width: "32px",
                                 height: "32px",
@@ -83,7 +83,7 @@ export default function DrawerLeft() {
                             marginRight: "12px"
                         }}>Admin</span>
 
-                        <img alt="" src='icon/arow-down.png'
+                        <img alt="icon-down" src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025543/foods-store/cncrjkafnmgarkdhfxsi.png'
                             style={{
                                 width: "8px",
                                 height: "5px",
@@ -115,19 +115,19 @@ export default function DrawerLeft() {
                         <img onClick={() => { navigate('/') }}
                             style={{ width: "102px", cursor: "pointer" }}
                             alt='logo'
-                            src='icon/UCARSLogo.png'></img>
+                            src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025545/foods-store/zj6clj3aziaej8gkw4am.png'></img>
                     </span>
 
                     <IconButton
                         sx={{ mt: "29px", mr: "26px", width: "17px", height: "13px" }}
                         onClick={handleDrawerClose}>
-                        <img alt='' src='icon/menu.png' />
+                        <img alt='menu-icon' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/j5yrivkzsnwbsgu8itjv.png' />
                     </IconButton>
                 </DrawerHeader>
 
-                <button className='btn'>
+                <button className='btn' onClick={() => { navigate('/') }}>
                     <span className='btn-icon'>
-                        <img alt='' src='icon/clarity_car-line.png'
+                        <img alt='icon-car' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025543/foods-store/qrhcxjmxc0fvbjvnm1lm.png'
                             style={{ width: '20px', height: "20px" }}
                         />
                     </span>
@@ -150,7 +150,7 @@ export default function DrawerLeft() {
                     />
 
                     <Box sx={{ mt: "30px" }}>
-                        <img alt='' src='icon/setting.png'
+                        <img alt='icon-setting' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/aa4i2nx7lywqcwmdgaml.png'
                             style={{ width: "16px", height: "17px", marginLeft: "50px" }}
                         />
                         <span

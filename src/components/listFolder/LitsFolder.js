@@ -24,7 +24,7 @@ export default function LitsFolder() {
 
             <ListItemButton onClick={handleClick}>
                 <ListItemIcon>
-                    <img alt='' src='icon/folder.png'
+                    <img alt='icon-folder' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/jagoobubuxtwdo01eyky.png'
                         style={{ marginLeft: "30px", height: "16px", width: "15px" }}
                     />
                 </ListItemIcon>
@@ -69,7 +69,7 @@ export default function LitsFolder() {
 
             <ListItemButton sx={{ mt: "37px" }}>
                 <ListItemIcon>
-                    <img alt='' src='icon/folder.png'
+                    <img alt='icon-folder' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/jagoobubuxtwdo01eyky.png'
                         style={{ marginLeft: "30px", height: "16px", width: "15px" }}
                     />
                 </ListItemIcon>
@@ -82,7 +82,7 @@ export default function LitsFolder() {
 
             <ListItemButton sx={{ mt: "37px" }}>
                 <ListItemIcon>
-                    <img alt='' src='icon/folder.png'
+                    <img alt='icon-folder' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/jagoobubuxtwdo01eyky.png'
                         style={{ marginLeft: "30px", height: "16px", width: "15px" }}
                     />
                 </ListItemIcon>
@@ -95,7 +95,7 @@ export default function LitsFolder() {
 
             <ListItemButton sx={{ mt: "37px" }}>
                 <ListItemIcon>
-                    <img alt='' src='icon/folder.png'
+                    <img alt='icon-folder' src='https://res.cloudinary.com/drvcdh4cx/image/upload/v1670025544/foods-store/jagoobubuxtwdo01eyky.png'
                         style={{ marginLeft: "30px", height: "16px", width: "15px" }}
                     />
                 </ListItemIcon>

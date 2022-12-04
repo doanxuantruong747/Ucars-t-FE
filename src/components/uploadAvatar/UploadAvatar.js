@@ -57,8 +57,8 @@ function UploadAvatar({ error, file, helperText, sx, ...other }) {
     <>
       <RootStyle
         sx={{
-          //backgroundColor: "#E3E3E3",
-          backgroundColor: "#FFF",
+          backgroundColor: "#E3E3E3",
+          //backgroundColor: "#FFF",
           borderColor: "sucess.light",
           width: "120px", height: "120px"
         }}

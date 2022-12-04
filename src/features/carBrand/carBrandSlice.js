@@ -4,11 +4,12 @@ import { cloudinaryUpload } from "../../untils/cloudinary";
 
 
 
-const initialState = {
+let initialState = {
   isLoading: false,
   error: null,
   listCarBrands: [],
   selectedCarBrand: null,
+  CarBrandError: null
 };
 
 const slice = createSlice({
@@ -40,8 +41,19 @@ const slice = createSlice({
       state.isLoading = false;
       state.error = null;
       const newCarBrand = action.payload;
+      const { addCarBrand } = action.payload
+      state.CarBrandError = addCarBrand
 
       state.listCarBrands.unshift(newCarBrand._id);
+    },
+
+    // Create CarBrand Error
+    createCarBrandError(state, action) {
+      state.isLoading = false;
+      state.error = null;
+      const { addCarBrand } = action.payload
+      state.CarBrandError = addCarBrand
+
     },
 
     // reset Car Brand -> listCarBrands = []
@@ -84,12 +96,16 @@ export const createCarBrand =
       dispatch(slice.actions.startLoading());
       try {
 
+
         const imageUrl = await cloudinaryUpload(image);
         const response = await apiService.post("/carBrand", {
           name, description, status,
           image: imageUrl,
         });
 
+        if (response.data.addCarBrand === false) {
+          return dispatch(slice.actions.createCarBrandError(response.data))
+        }
         dispatch(slice.actions.createCarBrandSuccess(response.data));
 
       } catch (error) {

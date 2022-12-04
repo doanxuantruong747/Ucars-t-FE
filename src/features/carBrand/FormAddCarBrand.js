@@ -22,8 +22,8 @@ const CreateCarBrandSchema = yup.object().shape({
 
 export default function FormAddCarBrand({ handleClose }) {
 
-    const { isLoading } = useSelector((state) => state.carBrand);
-    const [currentStatus, setcurrentStatus] = useState("Active")
+    const { isLoading, CarBrandError } = useSelector((state) => state.carBrand);
+    const [currentStatus, setcurrentStatus] = useState("Active");
 
     const defaultValues = {
         name: "",
@@ -60,19 +60,18 @@ export default function FormAddCarBrand({ handleClose }) {
         [setValue]
     );
 
+
     const onSubmit = (data) => {
 
         const page = 1
-        const { name, image, description, status } = data
+        const { name, image, description } = data
         dispatch(createCarBrand({ name, image, description, status: currentStatus }))
-        console.log(status);
+
         setTimeout(() => {
-            dispatch(getCarBrands({ page }));
+            dispatch(getCarBrands({ page }))
         }, 2000);
 
     };
-
-
 
     return (
 
@@ -118,6 +117,15 @@ export default function FormAddCarBrand({ handleClose }) {
                             <Box sx={{ ml: "24px", mt: "4px", width: "240px", height: "40px" }}>
                                 <FTextField
                                     name="name" placeholder="Input Content" />
+
+                                {(CarBrandError === false)
+                                    ? (<Typography sx={{
+                                        fontSize: "11px",
+                                        color: "#ef5350",
+                                    }}>* Car Brand already exists</Typography>)
+                                    : ""
+                                }
+
                             </Box>
                         </Box>
 
@@ -161,6 +169,7 @@ export default function FormAddCarBrand({ handleClose }) {
                 ><img alt='' src='icon/btn-cancel.png' /></Button>
 
                 <LoadingButton
+
                     sx={{ width: "127px", height: "40px" }}
                     variant="text"
                     type="submit"
