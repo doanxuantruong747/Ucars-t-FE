@@ -9,7 +9,8 @@ let initialState = {
   error: null,
   listCarBrands: [],
   selectedCarBrand: null,
-  CarBrandError: null
+  CarBrandError: null,
+  countCarBrand: null
 };
 
 const slice = createSlice({
@@ -31,9 +32,9 @@ const slice = createSlice({
       state.isLoading = false;
       state.error = null;
 
-      const { carBrands } = action.payload;
+      const { carBrands, count } = action.payload;
       state.listCarBrands = carBrands;
-
+      state.countCarBrand = count;
     },
 
     // create CarBrand Success
@@ -41,9 +42,8 @@ const slice = createSlice({
       state.isLoading = false;
       state.error = null;
       const newCarBrand = action.payload;
-      const { addCarBrand } = action.payload
-      state.CarBrandError = addCarBrand
 
+      state.CarBrandError = true
       state.listCarBrands.unshift(newCarBrand._id);
     },
 
@@ -51,8 +51,7 @@ const slice = createSlice({
     createCarBrandError(state, action) {
       state.isLoading = false;
       state.error = null;
-      const { addCarBrand } = action.payload
-      state.CarBrandError = addCarBrand
+      state.CarBrandError = false
 
     },
 

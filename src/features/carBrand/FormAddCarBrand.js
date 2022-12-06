@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FormProvider, FTextField, FUploadAvatar } from "../../components/form"
 import './styleCarBrand.css'
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +21,6 @@ const CreateCarBrandSchema = yup.object().shape({
 
 
 export default function FormAddCarBrand({ handleClose }) {
-
     const { isLoading, CarBrandError } = useSelector((state) => state.carBrand);
     const [currentStatus, setcurrentStatus] = useState("Active");
 
@@ -31,7 +30,6 @@ export default function FormAddCarBrand({ handleClose }) {
         description: "",
         status: currentStatus,
     }
-
 
     const methods = useForm({
         resolver: yupResolver(CreateCarBrandSchema),
@@ -61,6 +59,14 @@ export default function FormAddCarBrand({ handleClose }) {
     );
 
 
+    useEffect(() => {
+        if (CarBrandError === true)
+            setTimeout(() => {
+                handleClose()
+            }, 2200);
+    }, [CarBrandError, handleClose])
+
+
     const onSubmit = (data) => {
         const page = 1
         const { name, image, description } = data
@@ -68,9 +74,9 @@ export default function FormAddCarBrand({ handleClose }) {
 
         setTimeout(() => {
             dispatch(getCarBrands({ page }))
-        }, 2000);
-
+        }, 2000)
     };
+
 
     return (
 
@@ -168,7 +174,6 @@ export default function FormAddCarBrand({ handleClose }) {
                 ><img alt='' src='icon/btn-cancel.png' /></Button>
 
                 <LoadingButton
-
                     sx={{ width: "127px", height: "40px" }}
                     variant="text"
                     type="submit"
