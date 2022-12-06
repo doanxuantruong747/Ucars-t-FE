@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Divider, Grid, Typography } from '@mui/material';
 import { Box, Stack } from '@mui/system';
-import { createCarBrand, getCarBrands } from './carBrandSlice';
+import { createCarBrand, getCarBrands, resetCarError } from './carBrandSlice';
 import { LoadingButton } from '@mui/lab';
 import SelectStatus from '../../components/selectStatus/SelectStatus';
 
@@ -60,11 +60,13 @@ export default function FormAddCarBrand({ handleClose }) {
 
 
     useEffect(() => {
-        if (CarBrandError === true)
+        if (CarBrandError === true) {
             setTimeout(() => {
                 handleClose()
-            }, 2200);
-    }, [CarBrandError, handleClose])
+                dispatch(resetCarError())
+            }, 2000);
+        }
+    }, [CarBrandError, handleClose, dispatch])
 
 
     const onSubmit = (data) => {

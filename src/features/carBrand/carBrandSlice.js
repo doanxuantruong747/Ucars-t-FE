@@ -55,8 +55,18 @@ const slice = createSlice({
 
     },
 
+    //reset 
+    reset(state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.CarBrandError = null
+
+    },
+
     // reset Car Brand -> listCarBrands = []
     resetCarBrand(state, action) {
+      state.isLoading = false;
+      state.error = null;
       state.listCarBrands = [];
     },
 
@@ -82,6 +92,8 @@ const slice = createSlice({
       state.listCarBrands.shift();
     },
 
+
+
   }
 });
 
@@ -106,7 +118,6 @@ export const createCarBrand =
           return dispatch(slice.actions.createCarBrandError(response.data))
         }
         dispatch(slice.actions.createCarBrandSuccess(response.data));
-
       } catch (error) {
         dispatch(slice.actions.hasError(error.message));
 
@@ -129,7 +140,7 @@ export const getCarBrands =
 
       } catch (error) {
         dispatch(slice.actions.hasError(error.message));
-        //toast.error(error.message);
+
       }
     };
 
@@ -184,3 +195,15 @@ export const deleteCarBrand =
       }
     };
 
+// function reset carError
+export const resetCarError =
+  () => (dispatch) => {
+
+    try {
+      dispatch(slice.actions.reset());
+
+    } catch (error) {
+      dispatch(slice.actions.hasError(error.message));
+
+    }
+  };
